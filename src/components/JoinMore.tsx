@@ -2,6 +2,7 @@
 import { ArrowRight } from 'lucide-react';
 import { useState } from 'react';
 import { Button } from './ui/button';
+import { Link } from 'react-router-dom';
 
 
 const JoinMore = () => {
@@ -20,9 +21,10 @@ const JoinMore = () => {
       <div className="container mx-auto px-6">
         <h1 className='text-4xl text-white text-center m-8'>Join more than 170,000 people that <br /> finds early driving test</h1>
         <div className='flex justify-center items-center mt-8'>
+          <Link to="/book-now" >
         <Button size="lg" className="w-full text-xl sm:w-auto hover:bg-primary bg-primary/90 rounded-lg transition-all text-white duration-300 ease-in-out px-6 py-4 h-auto">
           Book My Driving Test
-          <ArrowRight /></Button>
+          <ArrowRight /></Button></Link>
       </div>
       </div>
     </section>

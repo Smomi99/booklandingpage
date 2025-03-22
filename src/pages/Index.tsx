@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import FAQSection2 from '@/components/FaqSection2';
 import JoinMore from '@/components/JoinMore';
+import { Link } from 'react-router-dom';
 
 const Index = () => {
   // Sample location data
@@ -108,9 +109,11 @@ const Index = () => {
             </div>
 
             <div className='flex justify-center items-center mt-8'>
+              <Link  to="/book-now" >
               <Button size="lg" className="w-full text-xl sm:w-auto hover:bg-primary bg-primary/90 rounded-lg transition-all text-white duration-300 ease-in-out px-6 py-4 h-auto">
                 Book My Driving Test
               <ArrowRight /></Button>
+              </Link>
             </div>
           </div>
 

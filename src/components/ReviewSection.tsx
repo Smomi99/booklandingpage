@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Star, ChevronLeft, ChevronRight, Quote, ArrowRight, PersonStanding } from 'lucide-react';
 import { Button } from './ui/button';
+import { Link } from 'react-router-dom';
 
 const reviews = [
   {
@@ -79,8 +80,8 @@ const ReviewCard = ({ review }: { review: typeof reviews[0] }) => (
             <Star
               key={i}
               className={`h-4 w-4 ${i < review.rating
-                  ? "text-blue-600 fill-blue-600"
-                  : "text-muted stroke-muted"
+                ? "text-blue-600 fill-blue-600"
+                : "text-muted stroke-muted"
                 }`}
             />
           ))}
@@ -181,10 +182,11 @@ const ReviewSection = () => {
       </div>
 
       <div className='flex flex-col justify-center items-center mt-8'>
-        <Button size="lg" className="w-full text-md sm:w-auto hover:bg-primary bg-primary/90 rounded-lg transition-all text-white duration-300 ease-in-out px-32 py-4 h-auto">
-          Book My Driving Test
-          <ArrowRight /></Button>
-          <p className='mt-2 text-md flex'>
+        <Link to="/book-now" >
+          <Button size="lg" className="w-full text-md sm:w-auto hover:bg-primary bg-primary/90 rounded-lg transition-all text-white duration-300 ease-in-out px-32 py-4 h-auto">
+            Book My Driving Test
+            <ArrowRight /></Button></Link>
+        <p className='mt-2 text-md flex'>
           <PersonStanding className='text-blue-700' />
           Express Processing • Lowest price guarantee • 24/7 Support</p>
       </div>

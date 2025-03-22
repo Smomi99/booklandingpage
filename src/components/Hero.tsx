@@ -1,22 +1,19 @@
-
-import React from 'react';
 import { Button } from '@/components/ui/button';
-import { MapPin, Calendar, CheckCircle, Globe, Eclipse, MessageCircle, MessageCircleCode } from 'lucide-react';
+import { Globe, Eclipse, MessageCircle, MessageCircleCode } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
-    <section className=" pt-32 pb-8 overflow-hidden">
-
-      <div className=' bg-blue-700 py-8'>
-        <div className="container px-36 mt-8">
+    <section className="pt-32 pb-8 overflow-hidden">
+      <div className="bg-blue-700 py-8">
+        <div className="container px-4 md:px-36 mt-8">
           <div className="max-w-7xl">
-            <div className=''>
-
-              <div className='flex gap-2'>
-                <div className='flex flex-col  gap-2'>
-                  <div className='flex gap-2'>
-                    <div className='flex rounded p-2 px-4 bg-blue-900 gap-2'>
-                      <div className='flex gap-1'>
+            <div>
+              <div className="flex flex-col md:flex-row gap-2">
+                <div className="flex flex-col gap-2 flex-1">
+                  <div className="flex gap-2">
+                    <div className="flex rounded p-2 px-4 bg-blue-900 gap-2">
+                      <div className="flex gap-1">
                         {[...Array(5)].map((_, index) => (
                           <svg
                             key={index}
@@ -30,78 +27,72 @@ const Hero = () => {
                         ))}
                       </div>
                       <span className="text-sm font-normal text-white/90">18,597+ 5-Star Reviews</span>
-
                     </div>
                   </div>
                   <h1 className="text-4xl md:text-5xl text-white mt-8 lg:text-5xl font-bold leading-tight mb-6 text-balance animate-fade-in">
                     Find early driving test cancellations and <br />
                     book now
                   </h1>
-
                   <p className="text-lg md:text-xl text-white mb-10 mx-auto max-w-2xl">
                     Need an earlier driving test? bookdrivingtest finds earlier test slots and books them for you, so you can start driving sooner without the stress!
-
                   </p>
-
+                  <Link  to="/book-now" className="w-full">
                   <Button size="lg" className="w-full text-2xl sm:w-auto bg-white hover:bg-primary/90 rounded-lg transition-all duration-300 ease-in-out px-6 py-6 h-auto text-black">
                     Book My Driving Test
                   </Button>
+                  </Link>
                 </div>
-                <div>
+                <div className="flex-1">
                   <img
                     src="https://cdn.prod.website-files.com/65f821325a96255ad25d812e/677d2bf82f557c78d77d3c1f_1-p-500.png"
                     alt="Driving Test Center"
-                    className="rounded-lg"
+                    className="rounded-lg w-full md:w-auto"
                     width={600}
                     height={400}
                   />
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
-      <div className='flex justify-center max-w-7xl p-4 mx-auto gap-4 mt-4'>
-
-        <div className='flex flex-col gap-2'>
+      <div className="flex flex-col sm:flex-row justify-center max-w-7xl p-4 mx-auto gap-4 mt-4">
+        <div className="flex flex-col gap-2">
           <div className="flex items-center gap-2">
             <Globe className="h-6 w-6 text-blue-700" />
-            <div className='flex flex-col'>
-            <span className="text-md font-medium ">Supported 170,000+ learner drivers</span>
-            <span className="text-sm ">in successfully getting their driving licence</span>
+            <div className="flex flex-col">
+              <span className="text-md font-medium">Supported 170,000+ learner drivers</span>
+              <span className="text-sm">in successfully getting their driving licence</span>
             </div>
           </div>
         </div>
-        <div className='flex flex-col gap-2'>
+        <div className="flex flex-col gap-2">
           <div className="flex items-center gap-2">
             <Eclipse className="h-6 w-6 text-blue-700" />
-            <div className='flex flex-col'>
-            <span className="text-md font-medium ">Supported 170,000+ learner drivers</span>
-            <span className="text-sm  ">in successfully getting their driving licence</span>
+            <div className="flex flex-col">
+              <span className="text-md font-medium">Save 5 Weeks of waiting time</span>
+              <span className="text-sm">Our users save 5 weeks of waiting time</span>
             </div>
           </div>
         </div>
-        <div className='flex flex-col gap-2'>
+        <div className="flex flex-col gap-2">
           <div className="flex items-center gap-2">
             <MessageCircleCode className="h-6 w-6 text-blue-700" />
-            <div className='flex flex-col'>
-            <span className="text-md font-medium ">Supported 170,000+ learner drivers</span>
-            <span className="text-sm ">in successfully getting their driving licence</span>
+            <div className="flex flex-col">
+              <span className="text-md font-medium">97% Success Rate</span>
+              <span className="text-sm">Users booked their desired date</span>
             </div>
           </div>
         </div>
-        <div className='flex flex-col gap-2'>
+        <div className="flex flex-col gap-2">
           <div className="flex items-center gap-2">
             <MessageCircle className="h-6 w-6 text-blue-700" />
-            <div className='flex flex-col'>
-            <span className="text-md font-medium ">Supported 170,000+ learner drivers</span>
-            <span className="text-sm  ">in successfully getting their driving licence</span>
+            <div className="flex flex-col">
+              <span className="text-md font-medium">24/7 Live chat</span>
+              <span className="text-sm">%99.5 Happy customer</span>
             </div>
           </div>
         </div>
-        
-
       </div>
     </section>
   );

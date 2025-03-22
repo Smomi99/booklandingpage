@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowRight, Check } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const PricingOption = ({
   title,
@@ -27,12 +28,13 @@ const PricingOption = ({
       </div>
       <CardDescription className={popular ? 'text-white' : ''}>{description}</CardDescription>
       <div>
+        <Link  to="/book-now">
         <Button
           className={` ${popular ? 'hover:bg-primary/90 bg-white border text-black' : 'bg-white border text-black hover:bg-secondary/90 text-foreground'}`}
         >
           {cta}
           <ArrowRight />
-        </Button>
+        </Button></Link>
       </div>
     </CardHeader>
 
