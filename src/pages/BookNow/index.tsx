@@ -402,7 +402,7 @@ const BookNow = () => {
         <p><strong>Sort Code:</strong> 07-08-06</p>
         <p><strong>Account Number:</strong> 30530087</p>
         <br />
-        <p><strong>Amount: </strong>  Â£120.00</p>
+        <p><strong>Amount: </strong> &#163;120.00</p>
 
         <p><strong>Reference:</strong> {formData.paymentReference}</p>
       </div>
