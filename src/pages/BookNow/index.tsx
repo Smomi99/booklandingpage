@@ -74,42 +74,42 @@ const BookNow = () => {
       "January", "February", "March", "April", "May", "June",
       "July", "August", "September", "October", "November", "December"
     ];
-  
+
     const now = new Date();
     const currentMonthIndex = now.getMonth();
     const currentYear = now.getFullYear();
     const minDate = new Date(now.getTime() + 16 * 24 * 60 * 60 * 1000);
-  
+
     // Modified month generation logic
     const rangeMonths = Array.from({ length: 6 }, (_, i) => {
       const monthIndex = (currentMonthIndex + i) % 12;
       const year = currentYear + Math.floor((currentMonthIndex + i) / 12);
-  
+
       // Generate all valid dates for the month
       const allDates = [];
       const date = new Date(year, monthIndex, 1);
-  
+
       while (date.getMonth() === monthIndex) {
         if (date >= minDate && date.getDay() !== 0) { // Exclude Sundays
           allDates.push(new Date(date));
         }
         date.setDate(date.getDate() + 1);
       }
-  
+
       // Randomly select between 3-7 dates
       const numDates = Math.min(allDates.length, Math.floor(Math.random() * 5) + 3);
       const selectedDates = allDates
         .sort(() => Math.random() - 0.5) // Shuffle array
         .slice(0, numDates)
         .sort((a, b) => a - b); // Sort chronologically
-  
+
       // Create slots with random times
       const slots = selectedDates.map(date => {
         const randomHour = Math.floor(Math.random() * (17 - 9)) + 9;
         const randomMinute = [0, 15, 30, 45][Math.floor(Math.random() * 4)];
         const time = new Date(date);
         time.setHours(randomHour, randomMinute);
-  
+
         return {
           date: new Date(date),
           times: [
@@ -121,7 +121,7 @@ const BookNow = () => {
           ]
         };
       });
-  
+
       return {
         name: months[monthIndex],
         monthIndex,
@@ -504,7 +504,7 @@ Form Data: ${JSON.stringify(formData)}`;
                 <form className="space-y-4" onSubmit={handleNext}>
                   <div className="text-center mb-8">
                     <h1 className="text-2xl md:text-2xl lg:text-3xl font-semibold leading-tight mb-4 text-gray-900">
-                      Find early driving test cancellations and book now
+                      Find an early driving test for just &#163;120!
                     </h1>
                     <p className="text-sm font-bold text-gray-400 mb-8 max-w-2xl mx-auto">
                       Need an earlier driving test? We find earlier test slots for you on your chosen dates, so you can start driving sooner.
@@ -767,7 +767,7 @@ Form Data: ${JSON.stringify(formData)}`;
                         />
                       </div>
                     </>) : <></>}
-			<div className="space-y-2 md:space-y-0">
+                    <div className="space-y-2 md:space-y-0">
                       <Button
                         type="submit"
                         className="w-full mt-4 text-md flex justify-center items-center bg-blue-700 hover:bg-primary/90 rounded-full px-4 py-4 h-12"
